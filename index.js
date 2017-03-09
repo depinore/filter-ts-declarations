@@ -5,7 +5,7 @@ const fs = require('fs');
 const declarationBlockPattern = /(declare|module).*[\s\S]*?(?=declare|module|$)/gi;
 
 const declarationMatches = (declarationBlock, matchedStrings) => 
-    matchedStrings.some(str => declarationBlock.toLowerCase().indexOf(str) > -1);
+    matchedStrings.some(str => declarationBlock.toLowerCase().indexOf(str.toLowerCase()) > -1);
 
 function read(fileName) {
     return new Promise(function(resolve, reject) {
