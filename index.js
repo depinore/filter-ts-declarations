@@ -12,6 +12,11 @@ function read(fileName) {
         fs.readFile(fileName, 'utf8', (err,data) => err ? reject(err) : resolve(data))
     })
 }
+function write(fileName, contents) {
+    return new Promise(function(resolve, reject) {
+        fs.writeFile(fileName, content, { encoding: 'utf8' }, (err) => err ? reject(err) : resolve())
+    })
+}
 
 
 (function main() {
@@ -30,7 +35,7 @@ function read(fileName) {
                         .match(declarationBlockPattern) || [])
                         .filter(block => declarationMatches(block, matchedStrings))
                         .join(''))
-            .then(newFileContent => process.stdout.write(newFileContent))
+            .then(newFileContent => write(fileName, newFileContent))
             
     }
 })();
