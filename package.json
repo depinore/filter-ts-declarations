@@ -1,6 +1,6 @@
 {
   "name": "filter-ts-declarations",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Omits TypeScript declaration blocks that don't contain a specified string.",
   "main": "index.js",
   "bin": {

@@ -13,6 +13,7 @@ function read(fileName) {
     })
 }
 
+
 (function main() {
     if(process.argv.length < 4 || process.argv.indexOf('-h') > -1 || process.argv.indexOf('--help') > -1) {
         console.log('filter-ts-declarations <declarationFile> <matchedStrings...>');
@@ -25,10 +26,10 @@ function read(fileName) {
 
         read(declarationFile)
             .then(declarationFileContent => 
-                    declarationFileContent
-                    .match(declarationBlockPattern)
-                    .filter(block => declarationMatches(block, matchedStrings))
-                    .join(''))
+                    (declarationFileContent
+                        .match(declarationBlockPattern) || [])
+                        .filter(block => declarationMatches(block, matchedStrings))
+                        .join(''))
             .then(newFileContent => process.stdout.write(newFileContent))
             
     }
