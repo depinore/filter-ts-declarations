@@ -14,7 +14,7 @@ function read(fileName) {
 }
 function write(fileName, contents) {
     return new Promise(function(resolve, reject) {
-        fs.writeFile(fileName, content, { encoding: 'utf8' }, (err) => err ? reject(err) : resolve())
+        fs.writeFile(fileName, contents, { encoding: 'utf8' }, (err) => err ? reject(err) : resolve())
     })
 }
 
@@ -35,7 +35,7 @@ function write(fileName, contents) {
                         .match(declarationBlockPattern) || [])
                         .filter(block => declarationMatches(block, matchedStrings))
                         .join(''))
-            .then(newFileContent => write(fileName, newFileContent))
+            .then(newFileContent => write(declarationFile, newFileContent))
             
     }
 })();
