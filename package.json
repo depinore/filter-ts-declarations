@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Filters TypeScript declaration files that don't contain a specified string.",
   "main": "index.js",
+  "bin": {
+    "filter-ts-declarations": "index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "precompile": "npm install",
-    "compile": "node node_modules/typescript/bin/tsc -p src/tsconfig.json"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,15 +21,7 @@
   "bugs": {
     "url": "https://github.com/depinore/filter-ts-declarations/issues"
   },
-  "files": [
-    "dist"
-  ],
   "homepage": "https://github.com/depinore/filter-ts-declarations#readme",
-  "devDependencies": {
-    "typescript": "^2.2.1"
-  },
-  "dependencies": {
-    "@types/commander": "^2.3.31",
-    "commander": "^2.9.0"
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }
